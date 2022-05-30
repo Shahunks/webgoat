@@ -16,7 +16,7 @@ pipeline {
         }
         stage('SAST'){
             steps{
-               sh "docker run -v ${WORKSPACE}:/src  returntocorp/semgrep-agent:v1 semgrep-agent --config "p/java"
+               sh "docker run -v ${WORKSPACE}:/src  returntocorp/semgrep-agent:v1 semgrep-agent --config p/java"
             }
         }
     }
