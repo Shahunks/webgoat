@@ -2,11 +2,6 @@
 pipeline {
     agent any
     stages {
-        stage('SCM') {
-            steps {
-                git branch: 'main', url: 'https://github.com/Shahunks/webgoat.git'
-            }
-        }
         stage('depedency-check-Analysis'){
             steps{
           dependencycheck additionalArguments: '--format XML', odcInstallation: 'OSWAP-dependency-check'
