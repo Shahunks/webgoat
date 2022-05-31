@@ -11,7 +11,7 @@ pipeline {
             steps{
             dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
             /* groovylint-disable-next-line DuplicateStringLiteral, LineLength */
-            archiveArtifacts allowEmptyArchive: true, artifacts: '**/dependency-check-report.xml', onlyIfSuccessful: true
+            //archiveArtifacts allowEmptyArchive: true, artifacts: '**/dependency-check-report.xml', onlyIfSuccessful: true
             }
         }
         stage('SAST'){
