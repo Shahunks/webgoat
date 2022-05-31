@@ -16,7 +16,7 @@ pipeline {
 //         }
         stage('SAST'){
             steps{
-                sh "docker run --rm -v "$(pwd):/src" returntocorp/semgrep semgrep --config p/security-audit /src"
+                sh "docker run --rm -v "${pwd}:/src" returntocorp/semgrep semgrep --config p/security-audit /src"
             }
         }
     }
