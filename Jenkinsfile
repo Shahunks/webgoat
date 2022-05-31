@@ -2,11 +2,11 @@
 pipeline {
     agent any
     stages {
-        stage('depedency-check-Analysis'){
-            steps{
-          dependencycheck additionalArguments: '--format XML', odcInstallation: 'OSWAP-dependency-check'
-            }
-        }
+//         stage('depedency-check-Analysis'){
+//             steps{
+//           dependencycheck additionalArguments: '--format XML', odcInstallation: 'OSWAP-dependency-check'
+//             }
+//         }
 //         stage('Dependency-Check') {
 //             steps{
 //             dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
