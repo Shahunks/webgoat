@@ -16,6 +16,7 @@ pipeline {
         }
         stage('SAST'){
             steps{
+                sh 'whoami'
                 sh 'cd ${WORKSPACE} && semgrep --config=auto'
             }
         }
