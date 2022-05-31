@@ -16,7 +16,7 @@ pipeline {
         }
         stage('SAST'){
             steps{
-               sh "docker run --rm -v ${WORKSPACE}:/src returntocorp/semgrep semgrep --config=auto"
+               sh "docker run -v ${WORKSPACE}:/src --workdir /src returntocorp/semgrep-agent:v1 semgrep-agent --config p/ci --config p/security-audit --config p/secrets"
             }
         }
     }
