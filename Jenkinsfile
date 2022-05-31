@@ -16,7 +16,7 @@ pipeline {
         }
         stage('SAST'){
             steps{
-                sh "docker run -v ${PWD}:/src --workdir /src returntocorp/semgrep-agent:v1 semgrep-agent --config p/ci --config p/security-audit --config p/secrets"
+                sh "docker run -v ${pwd}:/src --workdir /src returntocorp/semgrep-agent:v1 semgrep-agent --config p/ci --config p/security-audit --config p/secrets"
             }
         }
     }
