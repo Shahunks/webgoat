@@ -16,6 +16,7 @@ pipeline {
         }
         stage('SAST'){
             steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Shahunks/webgoat.git']]])
                 sh "cd ${WORKSPACE} && docker run -v ${WORKSPACE}:/src --workdir /src returntocorp/semgrep-agent:v1 semgrep-agent --config p/ci --config p/security-audit --config p/secrets"
             }
         }
