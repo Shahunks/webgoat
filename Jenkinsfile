@@ -1,5 +1,5 @@
 /* groovylint-disable-next-line CompileStatic */
-def workspace = pwd() 
+def workspace = $PWD 
 pipeline {
     agent any
     stages {
