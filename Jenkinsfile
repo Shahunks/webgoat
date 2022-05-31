@@ -16,7 +16,7 @@ pipeline {
 //         }
         stage('SAST'){
             steps{
-                sh "docker run --rm -v C:\ProgramData\Jenkins\.jenkins\workspace\Devsecops:/src returntocorp/semgrep semgrep --config p/security-audit /src"
+                sh "docker run --rm -v C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Devsecops:/src returntocorp/semgrep semgrep --config p/security-audit /src"
             }
         }
     }
