@@ -16,6 +16,7 @@ pipeline {
         }
         stage('SAST'){
             steps{
+                sh "echo ${PWD}"
                 sh "cd ${WORKSPACE} && docker run returntocorp/semgrep-agent:v1 semgrep-agent --config p/ci --config p/security-audit --config p/secrets"
             }
         }
