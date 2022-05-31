@@ -16,7 +16,9 @@ pipeline {
         }
         stage('SAST'){
             steps{
-                sh "docker run -v /var/jenkins_home/workspace/Devsecops:/src --workdir /src returntocorp/semgrep-agent:v1 semgrep-agent --config p/ci --config p/security-audit --config p/secrets"
+                git branch: 'main', url: 'https://github.com/Shahunks/webgoat.git'
+                sh 'ls'
+                //sh "docker run -v /var/jenkins_home/workspace/Devsecops:/src --workdir /src returntocorp/semgrep-agent:v1 semgrep-agent --config p/ci --config p/security-audit --config p/secrets"
             }
         }
     }
