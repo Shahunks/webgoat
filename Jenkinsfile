@@ -16,7 +16,7 @@ pipeline {
         }
         stage('SAST'){
             steps{
-                sh 'semgrep --confi=auto'
+                sh 'cd ${WORKSPACE} && semgrep --config=auto'
             }
         }
     }
