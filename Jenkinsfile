@@ -3,14 +3,14 @@ pipeline {
     stages {
         stage('depedency-check-Analysis'){
             steps{
-          dependencycheck additionalArguments: '--format XML', odcInstallation: 'OSWAP-dependency-check'
+          dependencycheck additionalArguments: '--format XML --format HTML', odcInstallation: 'OSWAP-dependency-check'
             }
         }
         stage('Dependency-Check-xml-report') {
             steps{
             dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
             /* groovylint-disable-next-line DuplicateStringLiteral, LineLength */
-            archiveArtifacts allowEmptyArchive: true, artifacts: '**/dependency-check-report.xml', onlyIfSuccessful: true
+            archiveArtifacts allowEmptyArchive: true, artifacts: '**/dependency-check-report.html', onlyIfSuccessful: true
             }
         }
         stage('SAST'){
