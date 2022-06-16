@@ -25,7 +25,7 @@ pipeline {
          stage('DAST'){
             steps{
                 catchError(buildResult: 'SUCCESS', message: 'FAILURE', stageResult: 'FAILURE') {
-                 bat "docker run -t owasp/zap2docker-stable zap-baseline.py -t http://www.vulnweb.com"
+                 bat "docker run -t owasp/zap2docker-stable zap-fullscan.py -t http://www.vulnweb.com"
                 }
             }
         }
